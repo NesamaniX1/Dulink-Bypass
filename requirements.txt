@@ -7,3 +7,4 @@ aiofiles
 bs4
 requests
 lxml
+python-dotenv
