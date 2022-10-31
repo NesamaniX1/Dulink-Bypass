@@ -74,10 +74,11 @@ async def replace_link(text):
     links = await extract_link(text)
 
     for link in links:
-        if "du-link.in" in link:
+        if "dulink.in" in link:
             long_url = link
             try:
                 link = link.replace("dulink", "du-link")
+                print(link)
                 short_link = await dulink_bypass(link)
                 text = text.replace(long_url, short_link)
             except Exception as e:
