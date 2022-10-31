@@ -74,7 +74,7 @@ async def replace_link(text):
     links = await extract_link(text)
 
     for link in links:
-        if "dulink.in" in link:
+        if "du-link.in" in link:
             long_url = link
             try:
                 short_link = await dulink_bypass(link)
@@ -94,8 +94,8 @@ async def dulink_bypass(url):
         data = {input.get('name'): input.get('value') for input in inputs}
         h = {'content-type': 'application/x-www-form-urlencoded', 'x-requested-with': 'XMLHttpRequest'}
         p = urlparse(url)
-        final_url = 'https://tekcrypt.in/tek/links/go'
-        time.sleep(int(os.environ.get('COUNTER_VALUE', '19')))
+        final_url = 'https://du-link.in/links/go'
+        time.sleep(int(os.environ.get('COUNTER_VALUE', '1')))
         res = client.post(final_url, data=data, headers=h).json()
         print(res)
         return res['url']
